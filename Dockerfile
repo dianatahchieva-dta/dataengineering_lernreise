@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:18-alpine AS build
+FROM node:24-alpine AS build
 
 # Set working directory
 WORKDIR /app
@@ -22,7 +22,7 @@ COPY vite.config.ts ./vite.config.ts
 RUN npm run build
 
 # Use a lightweight web server for static files
-FROM node:18-alpine AS serve
+FROM node:24-alpine AS serve
 
 # Create a non-root user and group for the serve stage
 RUN npm install --ignore-scripts -g serve \
@@ -42,4 +42,4 @@ USER nodeapp
 EXPOSE 3000
 
 # Command to run the app
-CMD ["serve", "-s", ".", "-l", "3000"]
+CMD ["serve", "-s", ".", "-l", "3000", "--no-clipboard"]

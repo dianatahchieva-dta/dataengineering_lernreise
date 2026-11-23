@@ -17,7 +17,7 @@ az acr credential show --name <My-Azure-ACR>
 ```
 4. save (first) password as ACR_PASSWORD in github project settings &rarr; Secrets and variables &rarr; Actions &rarr; Repository secrets
 
-### Publish your Webapp to ACR using gitlab pipelines
+### Publish your Webapp to ACR using GitHub Actions
 See ``docker-publish.yml``
 
 ### Run ACR image on your local machine (optional)
@@ -74,16 +74,16 @@ for the application name with ``AZURE_WEBAPP_NAME`` containing ``<your-webapp-na
   a) Issue in **App.tsx** (in Maintainability) \
   b) Issue in **Dockerfile** (in Security Hotspots)
 
-## PART F - GitOps (Requires Part B)
+## PART E - GitOps (Requires Part B)
 
 ### Use ArgoCD
 (Build your own solution ;-) )
 
 
-## PART G - Dependency Management
+## PART F - Dependency Management
 
 ### Manage Dependencies
 Try using a solution like Renovate.
 
-## PART H - AI Code Review
+## PART G - AI Code Review
 There are multiple different ways to implement a AI code review. An example with a prePushHook is provided at /.githooks
